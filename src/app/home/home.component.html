@@ -1,0 +1,14 @@
+<h1>Works</h1>
+<ul>
+    <li *ngFor="let work of works$">
+        <a routerLink="/details/{{work.id}}">{{work.name}}</a>
+        <ul>
+            <li>{{work.email}}</li>
+            <li>
+                <a href="http://{{work.website}}">{{work.website}}</a>
+            </li>
+        </ul>
+    </li>
+    
+    
+</ul>

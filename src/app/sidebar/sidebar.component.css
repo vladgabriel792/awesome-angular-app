@@ -1,0 +1,60 @@
+nav {
+  background: #111111;
+  height: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  position: fixed;
+}
+
+nav ul li a {
+  width: 30px;
+  color: #fff;
+  padding: 20px;
+  display: block;
+}
+
+nav ul li a i {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+nav ul li a .activated {
+  background-color: #ffffff;
+}
+
+nav ul li .activated {
+  background-color: #ffffff;
+}
+
+nav ul li :hover {
+  color: #555555;
+}
+
+nav ul li:nth-child(1) {
+  top: 0%;
+}
+
+nav ul li:nth-child(2) {
+  top: 7%;
+}
+
+nav ul li:nth-child(3) {
+  top: 14%;
+}
+
+nav ul span {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+  top: 90%;
+  background-color: white;
+}
+/*# sourceMappingURL=sidebar.component.css.map */
