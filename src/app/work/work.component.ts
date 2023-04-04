@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { DataService } from '../data.service';
 import { Work } from '../models/Work';
 import { Router } from '@angular/router';
@@ -12,7 +12,9 @@ export class WorksComponent implements OnInit {
 
   works: Work[] = [];
 
-  constructor(private dataService: DataService, private router: Router) { }
+  constructor(private dataService: DataService, private router: Router, private renderer: Renderer2) {
+    this.renderer.setStyle(document.body, 'background-color', '#eef4ed');
+   }
 
   ngOnInit(): void {
     this.dataService.getWorks().subscribe(works => {
@@ -24,10 +26,6 @@ export class WorksComponent implements OnInit {
     this.works = this.works.filter(w => w !== work);
     this.dataService.deleteWork(work).subscribe();
   }
-
-  // editWork(id: number): void {
-  //   this.router.navigate(['/works/:id', id]);
-  // }
 
   editWork(id: string): void {
     this.router.navigate(['/works/edit', id]);

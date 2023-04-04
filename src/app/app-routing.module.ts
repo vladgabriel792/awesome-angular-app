@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 import { WorksComponent } from './work/work.component';
 import { WorkAddEditComponent } from './work-add-edit/work-add-edit.component';
-import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'works',
+    redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'works',
@@ -22,8 +26,7 @@ const routes: Routes = [
     path: 'works/add',
     component: WorkAddEditComponent,
     pathMatch: 'full',
-    data: { title: 'Add Work' },
-    canActivate: [AuthGuard]
+    data: { title: 'Add Work' }
   },
   {
     path: "works/add",

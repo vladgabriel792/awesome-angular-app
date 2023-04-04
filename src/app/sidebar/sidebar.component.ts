@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd , Routes} from '@angular/router';
 import { Work } from '../models/Work';
 
 @Component({
@@ -9,24 +9,13 @@ import { Work } from '../models/Work';
 })
 export class SidebarComponent implements OnInit {
   
+  __URL:string = ""
   currentUrl: string;
-  router: Router;
 
+  constructor(public router: Router ) {
+  }
 
   ngOnInit(): void {  }
-
-  // unhideAllWorks(): void {
-  //   const works = JSON.parse(localStorage.getItem('works') || '[]');
-  //   const updatedWorks = works.map((work: Work) => {
-  //     return { ...work, hidden: false };
-  //   });
-  //   localStorage.setItem('works', JSON.stringify(updatedWorks));
-  // }
-
-
-  // navigateToWorks(): void {
-  //   this.router.navigate(['/works']);
-  // }
 
   unhideAllWorks(): void {
     const works = JSON.parse(localStorage.getItem('works') || '[]');
@@ -35,12 +24,6 @@ export class SidebarComponent implements OnInit {
     });
     localStorage.setItem('works', JSON.stringify(updatedWorks));
   }
-  
-  // navigateToWorks(): void {
-  //   this.router.navigate(['/works']).then(() => {
-  //     location.reload();
-  //   });
-  // }
 
   reloadPage(): void {
     location.reload();

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { Observable } from 'rxjs';
+import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +9,12 @@ import { Observable } from 'rxjs';
 })
 
 export class HomeComponent implements OnInit{
-
-  works$: any;
-
-  constructor(private data:DataService) {}
+  router: Router;
+  routerModule: RouterModule;
   
-  ngOnInit(){
-      this.data.getWorks().subscribe(
-        data => this.works$ = data
-      )
+  ngOnInit(): void { }
+
+  constructor(private renderer: Renderer2){
+    this.renderer.setStyle(document.body, 'background-color', 'whitesmoke');
   }
 }

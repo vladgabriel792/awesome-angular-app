@@ -1,14 +1,16 @@
 <nav>
-
     <ul>
         <li>
-            <a routerLink="works" [class.activated]="currentUrl == ''">
+            <a routerLink="home" [class.activated]="currentUrl == ''">
                 <i class="material-icons">home</i>
             </a>
         </li>
-        <li>
-            <a routerLink="unhide" (click)="unhideAllWorks(); reloadPage()" >
-                <i class="material-icons">work</i>
+        <li *ngIf="router.url === '/works'">
+            <a  routerLink="unhide" (click)="unhideAllWorks(); reloadPage()" mat-raised-button
+                matTooltip="Unhide all works"
+                matTooltipClass="example-tooltip-red"
+                aria-label="Button that displays a tooltip when focused or hovered over" >
+                <i class="material-icons">visibility</i>
               </a>
         </li>
         <li>
@@ -16,7 +18,7 @@
                 <i class="material-icons">add</i>
             </a>
         </li>
-        <span class="material-icons">
+        <span class="material-icons" aria-label="admin_badge">
             manage_accounts
         </span>
     </ul>

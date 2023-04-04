@@ -27,7 +27,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "../node_modules/ui-common/src/assets/images",
+                "output": "./assets/images"
+              }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",

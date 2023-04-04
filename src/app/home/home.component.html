@@ -1,14 +1,24 @@
-<h1>Works</h1>
-<ul>
-    <li *ngFor="let work of works$">
-        <a routerLink="/details/{{work.id}}">{{work.name}}</a>
-        <ul>
-            <li>{{work.email}}</li>
-            <li>
-                <a href="http://{{work.website}}">{{work.website}}</a>
-            </li>
-        </ul>
-    </li>
-    
-    
-</ul>
+    <div id="section-1">
+        
+        <div id="banner">
+
+        </div>
+
+        <div id="portfolio-button">
+            <a routerLink="/works" href="">
+                <i class="material-icons">work</i> 
+                <div id="btn-text">My Work</div>
+            </a>
+        </div>
+        
+        <img id="hero-image" src="/assets/images/image2.png" alt="">
+
+        <div id="hero-text">
+            <h1 id="hero-title">Hello!</h1>
+            <h1 id="hero-subtitle">My name is John Doe and i’m a digital worker</h1>
+        </div>
+    </div>
+
+    <!-- <div id="section-2">
+        
+    </div> -->

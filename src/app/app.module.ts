@@ -12,13 +12,16 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { WorksComponent } from './work/work.component' 
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     WorkAddEditComponent,
-    WorksComponent
+    WorksComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatDialogModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
